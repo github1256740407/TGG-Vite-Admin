@@ -37,7 +37,8 @@ switch (ENV) {
 // 项目运行
 if (command === "start") {
   const run = exec("vite");
-  run.stdout.on("data", (data) => console.log(data));
+  console.log("\x1b[32m", ` √ 命令已下达, 正在执行中Loading...`)
+  run.stdout.on("data", (data) => console.log(`  ${data.trim()}`));
   run.stderr.on("data", (data) => console.error(data));
 }
 // 项目部署

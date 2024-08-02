@@ -9,7 +9,6 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 export default defineConfig(({ command, mode }) => {
-  console.log(__dirname)
   // 当前环境下的所有自定义的VITE环境变量
   const CustomViteEnv = loadEnv(mode, process.cwd());
   return {

@@ -30,7 +30,7 @@ const handleAddRoutes = async () => {
   // 拿到layout容器路由, 并将其redirect定向成动态路由的第一条
   const layoutRoute = router.getRoutes().find((item) => item.name === "Layout");
   layoutRoute.redirect = { name: routeData[0].name }
-  console.log("%c [Vue3-Router]: 动态路由已添加完成", "color: tomato", router.getRoutes());
+  console.log("%c[Vue3-Router]: 动态路由已添加完成", "color: green", router.getRoutes());
 };
 
 // 路由全局前置守卫
