@@ -14,15 +14,26 @@ Vue3 + Vite + Element-plus + Axios + Pinia + Sass
 ## 7. 刷新白屏: 已进行兼容黑白版的动画优化
 ## 8. 切换路由: 页面进度条加载
 
-项目主要目录介绍
---src
-  -- api 接口请求
-  -- assets 静态资源
-  -- components 公共组件
-  -- layout 基础布局页面
-  -- mock 接口模拟数据
-  -- router 路由
-  -- store 全局数据状态管理
-  -- utils 工具函数
-  -- views 页面
---env.js 项目环境配置 + 命令行工具
+项目目录结构介绍
+
+├─.vscode
+├─public
+└─src
+    ├─api         #接口
+    ├─assets      #静态资源(图标, 图片, 基础样式)
+    ├─components  #公共组件
+    ├─layout      #布局模式容器 + 异常页面
+    ├─mock        #模拟数据
+    ├─router      #路由
+    ├─store       #全局数据状态管理
+    ├─utils       #工具函数
+    ├─views       #页面
+    │ App.vue     #根组件
+    │ main.js     #项目入口文件
+│ .gitignore
+│ env.js          #项目环境配置 + 命令行工具
+│ index.html
+│ package-lock.json
+│ package.json
+│ README.md
+│ vite.config.js
