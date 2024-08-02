@@ -12,51 +12,6 @@
       "component": "Welcome"
     },
     {
-      "name": "Home",
-      "path": "Home",
-      "meta": {
-        "title": "模板首页"
-      },
-      "children": [],
-      "component": "Home"
-    },
-    {
-      "name": "Over",
-      "path": "Over",
-      "meta": {
-        "title": "数据总览"
-      },
-      "children": [],
-      "component": "Over"
-    },
-    {
-      "name": "Recommend",
-      "path": "Recommend",
-      "meta": {
-        "title": "开发库推荐"
-      },
-      "children": [
-        {
-          "name": "Public",
-          "path": "Recommend/Public",
-          "meta": {
-            "title": "三方库"
-          },
-          "children": [],
-          "component": "Recommend/Public"
-        },
-        {
-          "name": "Self",
-          "path": "Recommend/Self",
-          "meta": {
-            "title": "个人库"
-          },
-          "children": [],
-          "component": "Recommend/Self"
-        }
-      ]
-    },
-    {
       "name": "Demo",
       "path": "Demo",
       "meta": {
