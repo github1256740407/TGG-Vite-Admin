@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>%VITE_PROJECT_NAME%</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 个性化JS文件 -->
+    <script>
+      // ----------初始化黑白版主题类名,避免刷新加载资源时,黑白版样式丢失----------
+      const theme = JSON.parse(localStorage.getItem("themeStore"))?.theme ?? "dark";
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <!-- 项目入口JS文件 -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+:root {
+  --custom-aside-width: 200px;
+}
+
+/* 常规模式 */
+::view-transition-old(root) {
+  z-index: 1999;
+}
+::view-transition-new(root) {
+  z-index: 1;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+/* 黑夜模式 */
+.dark::view-transition-old(root) {
+  z-index: 1;
+}
+.dark::view-transition-new(root) {
+  z-index: 1999;
+}

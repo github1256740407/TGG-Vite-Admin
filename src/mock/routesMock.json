@@ -1,0 +1,95 @@
+{
+  "code": 200,
+  "message": "动态路由接口数据Mock",
+  "body": [
+    {
+      "name": "Welcome",
+      "path": "Welcome",
+      "meta": {
+        "title": "欢迎页"
+      },
+      "children": [],
+      "component": "Welcome"
+    },
+    {
+      "name": "Home",
+      "path": "Home",
+      "meta": {
+        "title": "模板首页"
+      },
+      "children": [],
+      "component": "Home"
+    },
+    {
+      "name": "Over",
+      "path": "Over",
+      "meta": {
+        "title": "数据总览"
+      },
+      "children": [],
+      "component": "Over"
+    },
+    {
+      "name": "Recommend",
+      "path": "Recommend",
+      "meta": {
+        "title": "开发库推荐"
+      },
+      "children": [
+        {
+          "name": "Public",
+          "path": "Recommend/Public",
+          "meta": {
+            "title": "三方库"
+          },
+          "children": [],
+          "component": "Recommend/Public"
+        },
+        {
+          "name": "Self",
+          "path": "Recommend/Self",
+          "meta": {
+            "title": "个人库"
+          },
+          "children": [],
+          "component": "Recommend/Self"
+        }
+      ]
+    },
+    {
+      "name": "Demo",
+      "path": "Demo",
+      "meta": {
+        "title": "自动N级菜单"
+      },
+      "children": [
+        {
+          "name": "Demo",
+          "path": "Demo/Demo1",
+          "meta": {
+            "title": "Demo1"
+          },
+          "children": [],
+          "component": "Demo/Demo1"
+        },
+        {
+          "name": "Demo2",
+          "path": "Demo/Demo2",
+          "meta": {
+            "title": "Demo2"
+          },
+          "children": [
+            {
+              "name": "Demo2-1",
+              "path": "Demo/Demo2/Demo2-1",
+              "meta": {
+                "title": "Demo2-1"
+              },
+              "component": "Demo/Demo2/Demo2-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

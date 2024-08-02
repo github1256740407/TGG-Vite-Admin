@@ -1,0 +1,27 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node env.js start",
+    "publish": "node env.js publish"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "element-plus": "^2.7.6",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persist": "^1.0.0",
+    "vue": "^3.4.21",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "inquirer": "^9.3.2",
+    "sass": "^1.77.6",
+    "unplugin-auto-import": "^0.17.6",
+    "unplugin-vue-components": "^0.27.2",
+    "vite": "^5.2.0"
+  }
+}

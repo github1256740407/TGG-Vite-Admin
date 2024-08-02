@@ -1,0 +1,9 @@
+/* 项目样式清除文件 */
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+}
