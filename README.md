@@ -12,10 +12,13 @@
 7. 刷新白屏: 已进行兼容黑白版的动画优化
 8. 切换路由: 页面进度条加载
 # ---- 项目启动:
+```
 1. 拉取项目代码
 2. npm install
 3. npm run start 后续根据命令行内提供的选项回车即可
+```
 # ---- 目录结构:
+```
 ├─.vscode
 ├─public
 └─src
@@ -37,3 +40,4 @@
 │ package.json
 │ README.md
 │ vite.config.js
+```
