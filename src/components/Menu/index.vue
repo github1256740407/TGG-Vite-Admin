@@ -42,6 +42,7 @@ provide("menuIcon", menuIcon);
 <template>
   <el-menu
     id="Menu"
+    :class="themeStore.lightParentMenu ? 'lightParentMenu' : ''"
     router
     :mode="mode"
     :default-active="route.fullPath"
@@ -57,5 +58,12 @@ provide("menuIcon", menuIcon);
   width: 100%;
   height: 100%;
   border-right: none;
+}
+.lightParentMenu {
+  // 高亮当前菜单项关联的所有父菜单title
+  :deep(.el-sub-menu.is-active > .el-sub-menu__title) {
+    color: var(--el-menu-active-color) !important;
+    background-color: var(--el-menu-bg-color) !important;
+  }
 }
 </style>

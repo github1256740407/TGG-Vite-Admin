@@ -6,8 +6,24 @@ export const useThemeStore = defineStore("themeStore", {
     return {
       theme: "dark", // 主题名称 auto | dark
       layoutMode: "MixMode", // 布局模式 MixMode | LeftMode| TopMode | ModularMode
-      collapse: false, // 是否收缩菜单
+      collapse: false, // 菜单是否收缩
+      lightParentMenu: false, // 父菜单是否高亮
     };
+  },
+  actions: {
+    // 修改: 菜单是否收缩
+    setCollapse(value){
+      this.collapse = value;
+      if (value) {
+        document.documentElement.style.setProperty("--custom-aside-width", "66px");
+      } else {
+        document.documentElement.style.setProperty("--custom-aside-width", "200px");
+      }
+    },
+    // 修改: 父菜单是否高亮
+    setLightParentMenu(value) {
+      this.lightParentMenu = value;
+    }
   },
   // 开启本地缓存
   persist: {
@@ -15,7 +31,7 @@ export const useThemeStore = defineStore("themeStore", {
     strategies: [
       {
         storage: localStorage, //表示存储在localStorage
-        paths: ["theme", "layoutMode", "collapse"],
+        paths: ["theme", "layoutMode", "collapse", "highlightParentMenu"],
       },
     ],
   },

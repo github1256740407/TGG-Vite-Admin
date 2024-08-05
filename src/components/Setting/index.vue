@@ -16,17 +16,17 @@ const handleResetDefault = () => {
 };
 
 // 监控: 菜单是否收缩 => 修改 --custom-aside-width
-watch(
-  () => themeStore.collapse,
-  (value) => {
-    if (value) {
-      document.documentElement.style.setProperty("--custom-aside-width", "66px");
-    } else {
-      document.documentElement.style.setProperty("--custom-aside-width", "200px");
-    }
-  },
-  { immediate: true }
-);
+// watch(
+//   () => themeStore.collapse,
+//   (value) => {
+//     if (value) {
+//       document.documentElement.style.setProperty("--custom-aside-width", "66px");
+//     } else {
+//       document.documentElement.style.setProperty("--custom-aside-width", "200px");
+//     }
+//   },
+//   { immediate: true }
+// );
 </script>
 
 <template>
@@ -88,10 +88,24 @@ watch(
         </div>
         <div class="config">
           <span>菜单是否收缩:</span>
-          <el-switch v-model="themeStore.collapse" :active-value="true" :inactive-value="false" />
+          <el-switch
+            v-model="themeStore.collapse"
+            :active-value="true"
+            :inactive-value="false"
+            @change="themeStore.setCollapse"
+          />
           <el-tooltip content="该配置在[顶栏模式]下不生效" placement="top-start">
             <el-icon><QuestionFilled /></el-icon>
           </el-tooltip>
+        </div>
+        <div class="config">
+          <span>父菜单是否高亮:</span>
+          <el-switch
+            v-model="themeStore.lightParentMenu"
+            :active-value="true"
+            :inactive-value="false"
+            @change="themeStore.setLightParentMenu"
+          />
         </div>
       </div>
       <!-- 恢复默认 -->
