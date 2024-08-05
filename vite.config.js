@@ -38,5 +38,8 @@ export default defineConfig(({ command, mode }) => {
       port: CustomViteEnv.VITE_PORT,
       open: CustomViteEnv.VITE_OPEN,
     },
+    build: {
+      outDir: 'docs'
+    }
   };
 });
