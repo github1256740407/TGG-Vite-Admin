@@ -1,0 +1,1 @@
+const o=JSON.parse('{"code":200,"message":"登录接口数据Mock","body":{"account":"admin","token":"thisIsTokenValue"}}');export{o as default};

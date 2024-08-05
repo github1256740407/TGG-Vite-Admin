@@ -37,11 +37,14 @@ switch (ENV) {
 // 项目运行
 if (command === "start") {
   const run = exec("vite");
-  console.log("\x1b[32m", ` √ 命令已下达, 正在执行中Loading...`)
+  console.log("\x1b[32m", ` √ 项目运行命令已下达, 正在执行中Loading...`)
   run.stdout.on("data", (data) => console.log(`  ${data.trim()}`));
   run.stderr.on("data", (data) => console.error(data));
 }
 // 项目部署
 else if (command === "publish") {
-  console.log("暂不支持捏~");
+  const build = exec("vite build");
+  console.log("\x1b[32m", ` √ 项目打包命令已下达, 正在执行中Loading...`)
+  build.stdout.on("data", (data) => console.log(data));
+  build.stderr.on("data", (data) => console.error(data));
 }
