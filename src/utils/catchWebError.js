@@ -8,7 +8,9 @@ const sendErrorLog = (system, baseUrl, errorStack) => {
   const token = localStorage.getItem("token");
   const error = encodeURIComponent(errorStack);
   // 浏览器高级API sendBeacon, 优先级比起传统的请求低, 不占用浏览器并发量限制数
-  navigator.sendBeacon(`${baseUrl}/sendErrorLog?system=${system}&page=${page}&token=${token}&error=${error}`);
+  const url = `${baseUrl}/sendErrorLog?system=${system}&page=${page}&token=${token}&error=${error}`
+  // navigator.sendBeacon(url);
+  console.log(url)
 };
 
 export default {
@@ -22,11 +24,16 @@ export default {
     console.log(`%c[前端异常捕获]: 初始化成功-${system}`, "color: green");
     // 1.JavaScript错误监控
     window.addEventListener("error", (event) => {
-      event.error.stack && sendErrorLog(system, baseUrl, event.error.stack);
+      if (event.error?.stack) {
+        sendErrorLog(system, baseUrl, event.error.stack);
+      } else {
+        const errorJson = JSON.stringify(event.error, Object.getOwnPropertyNames(event.error), 2);
+        sendErrorLog(system, baseUrl, errorJson);
+      }
     });
     // 2.Promise错误监控
     window.addEventListener("unhandledrejection", (event) => {
-      event.reason.stack && sendErrorLog(system, baseUrl, event.reason.stack);
+      event.reason?.stack && sendErrorLog(system, baseUrl, event.reason.stack);
     });
   },
 };

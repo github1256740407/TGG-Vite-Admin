@@ -57,7 +57,7 @@ const initRequest = (env, config) => {
       }
     },
     (error) => {
-      const { response, config, message } = error;
+      const { response = {}, config = {}, message } = error;
       handleError instanceof Function && handleError(error);
       ElMessage.error(message);
       return Promise.reject(
