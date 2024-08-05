@@ -15,10 +15,13 @@ export default defineConfig(({ command, mode }) => {
     plugins: [
       vue(),
       AutoImport({
-        resolvers: [ElementPlusResolver()],
+        // 自动导入相关函数, 例如: ref, reactive, toRefs...
         imports: ["vue", "vue-router", "pinia"],
+        // 自动导入Element-plus相关函数, 例如: ElMessage, ElMessageBox... (带样式)
+        resolvers: [ElementPlusResolver()],
       }),
       Components({
+        // 自动注册Element-plus相关组件, 例如: el-button
         resolvers: [ElementPlusResolver()],
       }),
     ],

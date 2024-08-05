@@ -6,7 +6,8 @@
       "name": "Welcome",
       "path": "Welcome",
       "meta": {
-        "title": "欢迎页"
+        "title": "欢迎页",
+        "icon": "House"
       },
       "children": [],
       "component": "Welcome"
@@ -15,7 +16,8 @@
       "name": "Demo",
       "path": "Demo",
       "meta": {
-        "title": "自动N级菜单"
+        "title": "自动N级菜单",
+        "icon": "Menu"
       },
       "children": [
         {

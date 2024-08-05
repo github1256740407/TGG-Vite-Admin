@@ -6,8 +6,6 @@ import "@/assets/style/reset.css";
 import "@/assets/style/theme.css";
 import "@/assets/style/pageLoad.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
-// 菜单图标
-import "@/assets/icons";
 // 缓冲动画
 import refreshPageLoad from "@/utils/refreshPageLoad.js";
 // 插件引入

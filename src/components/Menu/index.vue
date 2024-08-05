@@ -14,6 +14,29 @@ const props = defineProps({
     default: "vertical", // 竖着的菜单
   },
 });
+
+const menuIcon = reactive({});
+
+onMounted(() => {
+  // 按需 + 动态引入icon组件
+  registerIcon(routeStore.menuData);
+});
+
+// 按需+动态注册Element-plus的icon
+const registerIcon = (data) => {
+  data.forEach((item) => {
+    if (item.meta.icon) {
+      import(`@element-plus/icons-vue`).then((res) => {
+        menuIcon[item.meta.icon] = shallowRef(res[item.meta.icon]);
+      });
+    }
+    if (item.children instanceof Array && item.children.length > 0) {
+      registerIcon(item.children);
+    }
+  });
+};
+
+provide("menuIcon", menuIcon);
 </script>
 
 <template>
