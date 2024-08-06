@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node env.js start",
-    "publish": "node env.js publish"
+    "publish": "node env.js publish",
+    "build": "vite build"
   },
   "dependencies": {
     "axios": "^1.7.2",
