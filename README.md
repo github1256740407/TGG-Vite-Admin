@@ -1,4 +1,6 @@
 # TGG-Vite-Admin 管理端模板(纯净版)
+在线预览演示网址: https://github1256740407.github.io/TGG-Vite-Admin/#/Login
+
 开发者: 叶花弈
 
 主要技术: Vue3 + Vite + Element-plus + Axios + Pinia + Sass
