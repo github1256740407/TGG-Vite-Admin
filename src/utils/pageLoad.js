@@ -1,5 +1,5 @@
 /**
- * @description: 页面加载动画的开始, 结束控制函数
+ * @description: 页面刷新动画的开始, 结束控制函数
  */
 // 开始加载
 const startLoad = () => {
@@ -36,6 +36,7 @@ const endLoad = () => {
   const pageLoadDomList = document.querySelectorAll(".block-loading");
   Array.from(pageLoadDomList).forEach((dom) => bodyDom.removeChild(dom));
 };
+
 export default {
   // 初始化
   init: () => {

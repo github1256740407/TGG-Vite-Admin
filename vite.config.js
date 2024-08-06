@@ -5,14 +5,14 @@ import { defineConfig, loadEnv } from "vite";
 // 插件引入
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+import createVersion from "./plugins/createVersion.js";
 // 三方组件库
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 export default defineConfig(({ command, mode }) => {
   // 当前环境下的所有自定义的VITE环境变量
-  const CustomViteEnv = loadEnv(mode, process.cwd());
+  const customViteEnv = loadEnv(mode, process.cwd());
   return {
-    base: './',
     plugins: [
       vue(),
       AutoImport({
@@ -25,6 +25,7 @@ export default defineConfig(({ command, mode }) => {
         // 自动注册Element-plus相关组件, 例如: el-button
         resolvers: [ElementPlusResolver()],
       }),
+      createVersion(),
     ],
     resolve: {
       alias: {
@@ -36,9 +37,8 @@ export default defineConfig(({ command, mode }) => {
     },
     server: {
       host: true, // 指定项目监听哪个IP, 如果['0.0.0.0'||true]将监听所有地址,包括局域网和公网
-      port: CustomViteEnv.VITE_PORT,
-      open: CustomViteEnv.VITE_OPEN,
+      port: customViteEnv.VITE_PORT,
+      open: customViteEnv.VITE_OPEN,
     },
-    transpileDependencies: true
   };
 });

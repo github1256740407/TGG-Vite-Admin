@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "fs-extra": "^11.2.0",
     "inquirer": "^9.3.2",
     "sass": "^1.77.6",
     "unplugin-auto-import": "^0.17.6",

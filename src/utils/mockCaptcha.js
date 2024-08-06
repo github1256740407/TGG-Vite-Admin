@@ -3,7 +3,7 @@
  * @param {String} canvasId
  * @param {Number} codeLength
  */
-const mockCaptchaImg = (canvasId, codeLength = 4) => {
+export default (canvasId, codeLength = 4) => {
   // 1. 生成4位随机字符串
   let code = "";
   let stringList = "ASDFGHJKLasdfghjkl123456789";
@@ -30,5 +30,3 @@ const mockCaptchaImg = (canvasId, codeLength = 4) => {
   img.src = canvas.toDataURL("image/png");
   return img;
 };
-
-export default mockCaptchaImg;

@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o,c}from"./index-CSvQHueF.js";const r={};function n(t,s){return o(),c("div",null,"这是Demo2-1")}const f=e(r,[["render",n]]);export{f as default};

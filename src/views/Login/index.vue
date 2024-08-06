@@ -1,6 +1,6 @@
 <script setup>
 import { User, Lock } from "@element-plus/icons-vue";
-import mockCaptchaImg from "@/utils/mockCaptchaImg.js";
+import mockCaptcha from "@/utils/mockCaptcha.js";
 import { useUserStore } from "@/store/useUserStore";
 import { login } from "@/api/modules/base.js";
 
@@ -39,7 +39,7 @@ const forgetPassword = () => {
 
 onMounted(() => {
   // 模拟: JS生成验证码图片
-  mockCaptchaImg("canvasId", 4);
+  mockCaptcha("canvasId", 4);
 });
 </script>
 
@@ -94,7 +94,7 @@ onMounted(() => {
                   width="70px"
                   height="32px"
                   title="点击canvas随机生成验证码"
-                  @click="mockCaptchaImg('canvasId')"
+                  @click="mockCaptcha('canvasId')"
                 />
               </template>
             </el-input>
