@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o,c}from"./index-Cq9vODgx.js";const t={},r={id:"404"};function _(n,s){return o(),c("div",r," 这个是404页面; ")}const i=e(t,[["render",_]]);export{i as default};
