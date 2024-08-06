@@ -12,6 +12,7 @@ export default defineConfig(({ command, mode }) => {
   // 当前环境下的所有自定义的VITE环境变量
   const CustomViteEnv = loadEnv(mode, process.cwd());
   return {
+    base: '/TGG-Vite-Admin/',
     plugins: [
       vue(),
       AutoImport({
