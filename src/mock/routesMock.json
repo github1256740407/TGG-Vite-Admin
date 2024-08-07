@@ -47,6 +47,16 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Node",
+      "path": "Node",
+      "meta": {
+        "title": "Node接口",
+        "icon": "SetUp"
+      },
+      "children": [],
+      "component": "Node"
     }
   ]
 }

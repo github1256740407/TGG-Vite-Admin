@@ -9,7 +9,6 @@ const sendErrorLog = (system, baseUrl, errorStack) => {
   // 浏览器高级API sendBeacon, 优先级比起传统的请求低, 不占用浏览器并发量限制数
   const url = `${baseUrl}/sendErrorLog?system=${system}&page=${page}&token=${token}&error=${error}`;
   // navigator.sendBeacon(url);
-  console.log(url);
 };
 
 export default {

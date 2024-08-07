@@ -2,7 +2,6 @@
  * @description: 网络请求方法: 基于Axios的封装, 抛出get, post方法
  */
 import Axios from "axios";
-import { ElMessage } from "element-plus";
 
 // 默认配置
 const defaultConfig = {
@@ -15,9 +14,11 @@ const defaultConfig = {
 let apiBaseUrlFlag = true;
 // 基础地址
 const getApiBaseUrl = ({ VITE_API_BASE_URL, VITE_API_BASE_URL2 }) => {
-  if (!VITE_API_BASE_URL2) return VITE_API_BASE_URL;
-  apiBaseUrlFlag = !apiBaseUrlFlag;
-  return apiBaseUrlFlag ? VITE_API_BASE_URL : VITE_API_BASE_URL2;
+  if (VITE_API_BASE_URL2 && VITE_API_BASE_URL2 !== "null") {
+    return apiBaseUrlFlag ? VITE_API_BASE_URL : VITE_API_BASE_URL2;
+  } else {
+    return VITE_API_BASE_URL;
+  }
 };
 
 /**
@@ -74,7 +75,7 @@ const initRequest = (env, config) => {
         method: "get",
         url: `${getApiBaseUrl(env)}${url}`,
         params,
-        ...config,
+        config,
       });
     },
     post: (url, data = {}, config = {}) => {
@@ -82,7 +83,7 @@ const initRequest = (env, config) => {
         method: "post",
         url: `${getApiBaseUrl(env)}${url}`,
         data,
-        ...config,
+        config,
       });
     },
   };
