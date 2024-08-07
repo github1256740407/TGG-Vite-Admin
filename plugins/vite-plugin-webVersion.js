@@ -6,7 +6,7 @@ import fsExtra from "fs-extra";
 
 export default () => {
   return {
-    name: "createVersion",
+    name: "vite-plugin-webVersion",
     buildStart() {
       try {
         const filePath = path.resolve(process.cwd(), "public/version.json");
@@ -81,7 +81,7 @@ export default () => {
                 return;
               }
               if (Number(localVersion) !== version) {
-                console.log('版本不一样')
+                console.log('Tips: 前端本地与服务器端版本不一致, 请刷新页面!', Number(localVersion), version)
                 tipDom.style = tipDomStyle + "opacity: 1; right: 20px;";
                 localStorage.setItem("version", version);
               }
@@ -94,6 +94,9 @@ export default () => {
             checkWebVersion();
             oldOpen.apply(this, arguments);
           };
+          window.addEventListener("click", () => {
+            checkWebVersion();
+          });
         </script></body>`
       );
     },

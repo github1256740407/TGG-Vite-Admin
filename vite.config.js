@@ -5,7 +5,7 @@ import { defineConfig, loadEnv } from "vite";
 // 插件引入
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
-import createVersion from "./plugins/createVersion.js";
+import vitePluginWebVersion from "./plugins/vite-plugin-webVersion.js";
 // 三方组件库
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
@@ -25,7 +25,8 @@ export default defineConfig(({ command, mode }) => {
         // 自动注册Element-plus相关组件, 例如: el-button
         resolvers: [ElementPlusResolver()],
       }),
-      createVersion(),
+      /* 自定义插件 */
+      vitePluginWebVersion(),
     ],
     resolve: {
       alias: {
