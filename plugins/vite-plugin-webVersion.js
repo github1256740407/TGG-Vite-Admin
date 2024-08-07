@@ -1,6 +1,9 @@
 /**
- * @description: vite自定义插件 - 创建前端项目版本
+ * @description vite自定义插件 - 创建前端项目版本 + 校验 + 提示
+ * @author 叶花弈
+ * @lastModify 2024-08-07
  */
+
 import path from "path";
 import fsExtra from "fs-extra";
 
